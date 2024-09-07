@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'NotoKufiArabic';
+    src: url('../fonts/arabic/NotoKufiArabic-Black.ttf') format('woff2'),
+        url('../fonts/arabic/NotoKufiArabic-Black.ttf') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+* {
+    font-family: "NotoKufiArabic", sans-serif;
+}
+body {
+    direction: rtl;
+}
+
+#accordionSidebar {
+    right: 0;
+    left: auto; /* Override any existing left value */
+    direction: rtl; /* Set the direction to right-to-left */
+
+}
+
+/* This will make sure that the sidebar icons align to the right */
+#accordionSidebar .nav-link {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/* Reverse the direction of caret icons for RTL */
+#accordionSidebar .nav-link .fa-caret-square-right,
+#accordionSidebar .nav-link .fa-caret-down,
+#accordionSidebar .nav-link .fa-caret-left,
+#accordionSidebar .nav-link .fa-caret-up {
+    /* Point caret icons to the left */
+    transform: rotate(180deg);
+}
+
+/* Adjust the toggle arrow when sidebar is collapsed */
+#accordionSidebar.toggled #sidebarToggle::after {
+    /* If you use a pseudo-element for the arrow, rotate it */
+    transform: rotate(180deg);
+}
+
+.nav-link.collapsed .fas.fa-folder {
+    transform: scaleX(-1);
+}
+
+
+
+/* Align the card content for RTL */
+.card-body .row {
+    direction: rtl; /* Sets the direction to right-to-left */
+}
+
+/* Ensure the icons are on the right */
+.card-body .col-auto {
+    flex: 0 0 auto; /* This prevents the icon from growing or shrinking */
+    margin-left: 1rem; /* Adds some space between the icon and the text */
+    order: 1; /* Puts the icon after the text in RTL */
+}
+
+/* Ensure the text is on the left */
+.card-body .col {
+    text-align: right; /* Aligns the text to the right */
+    order: 2; /* Puts the text before the icon in RTL */
+}
+
+.sidebar {
+    padding: 0 2%;
+}
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item{
+    text-align: start;
+}
+
+.sidebar .nav-item.dd .nav-link::after {
+    left: 20px;
+    right: auto !important;
+}
+
+.sidebar .nav-item.dd .nav-link.collapsed::after {
+    left: 11px;
+    right: auto !important;
+    transform: rotate(180deg);
+}
+
+.navbar-expand ul.navbar-nav {
+    margin-left: 7%;
+    justify-content: end;
+}
+
+.dropdown-menu-right, .sidebar-brand-text, .collapse-inner {
+    text-align: right;
+}
+
+.topbar #sidebarToggleTop{
+    margin-right: 0 !important;
+}
+
+.sidebar-toggled .container-fluid {
+    width: 66%;
+    margin: 0 32% 0 0;
+}
+
+.scroll-to-top{
+    left: 1rem;
+    right: auto;
+}
+
+.navbar-nav .nav-link {
+    direction: rtl;
+    text-align: right;
+}
+
+.nav-link .text-gray-600 {
+    margin-left: .5rem !important;
+}
